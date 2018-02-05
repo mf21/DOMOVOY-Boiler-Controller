@@ -63,13 +63,6 @@ void setup() {
   Serial.begin(9600);
   Serial.println("DОМОВОЙ Бойлер ver. 2.5");
   Serial.println("");
-//  Serial.println("System: starting");
-//  Serial.print("info: flgAlert=");
-//  Serial.println(flgAlert);
-//  Serial.print("info: flgAlone=");
-//  Serial.println(flgAlone);
-//  Serial.print("info: flgRelayOn=");
-//  Serial.println(flgRelayOn);
   
   menuInit();
   romInit();

@@ -3,15 +3,15 @@ void gsmInit() {
   gsmSerial.begin(9600);
   lcd.setCursor(0, 0);
   lcd.print("    STARTING    ");
-//  Serial.println("Modem: starting");
-  
-  while(gsmSerial.available() == 0);
-  gsmResponse();
-    
-  lcd.setCursor(0, 0);
-  lcd.print("   SEARCH NET   ");
-//  Serial.println("Modem: search for network");
 
+  while(gsmSerial.available() == 0);
+  
+  if (gsmResponse().indexOf("MODEM") > -1) {
+    while(gsmSerial.available() == 0);
+    gsmResponse();
+  }
+
+  gsmSerial.println("AT+CMEE=2");       // Extended ERROR report
   while(gsmSerial.available() == 0);
   gsmResponse();
 
@@ -30,11 +30,17 @@ void gsmInit() {
   gsmSerial.println("AT+CNMI=2,2");     // Отображать уведомления об sms
   while(gsmSerial.available() == 0);
   gsmResponse();
+
+  delay(2000);
   
   gsmSerial.println("AT+CMGD=1,4");     // Удалить все сообщения
   while(gsmSerial.available() == 0);
   gsmResponse();
-    
+
+  gsmSerial.println("AT+CEER");     // Удалить все сообщения
+  while(gsmSerial.available() == 0);
+  gsmResponse();
+      
 }
 
 String gsmResponse() {
@@ -59,24 +65,19 @@ String gsmResponse() {
 
 void gsmSendSMS(String gsmText) {
   
-//  Serial.println("Sending SMS...");
-  gsmSerial.println("AT");
+  gsmSerial.println("AT+COPS?");
   while(gsmSerial.available() == 0);
   gsmResponse();
   gsmSerial.println("AT+CMGS=\"+" + String(defPhone) + "\"");
-//  delay(500);
   while(gsmSerial.available() == 0);
   gsmResponse();
   gsmSerial.print(gsmText);
-//  delay(500);
   while(gsmSerial.available() == 0);
   gsmResponse();
   gsmSerial.print((char)26);
-//  delay(500);
   while(gsmSerial.available() == 0);
   gsmResponse();
   Serial.println("SMS send OK");
-//  delay(2000);
 }
 
 void gsmCheckSMS() {
@@ -87,9 +88,7 @@ void gsmCheckSMS() {
     return;      
   }
 
-  if (gsmCommand.indexOf("check") > -1) {
-    
- //   Serial.println("Recieving request for State");
+  if (gsmCommand.indexOf("check") > -1) {  
     gsmSerial.println("AT");
     while(gsmSerial.available() == 0);
     gsmResponse();
@@ -98,7 +97,6 @@ void gsmCheckSMS() {
   }
 
   if (gsmCommand.indexOf("settn=") > -1) {
- //   Serial.println("Recieving request for set TNormal");
     byte Pos = gsmCommand.indexOf("settn=") + 6;
     defTNormal = gsmCommand.substring(Pos).toInt();
     EEPROM.write(romTNormal, defTNormal);
@@ -108,7 +106,6 @@ void gsmCheckSMS() {
   }
 
   if (gsmCommand.indexOf("settl=") > -1) {
-//    Serial.println("Recieving request for set TLow");
     byte Pos = gsmCommand.indexOf("settl=") + 6;
     defTLow = gsmCommand.substring(Pos).toInt();
     EEPROM.write(romTLow, defTLow);
@@ -118,7 +115,6 @@ void gsmCheckSMS() {
   }
 
   if (gsmCommand.indexOf("setta=") > -1) {
-//    Serial.println("Recieving request for set TAlert");
     byte Pos = gsmCommand.indexOf("setta=") + 6;
     defTAlert = gsmCommand.substring(Pos).toInt();
     EEPROM.write(romTAlert, defTAlert);
@@ -128,14 +124,12 @@ void gsmCheckSMS() {
   }
 
   if (gsmCommand.indexOf("setmode=home") > -1) {
-//    Serial.println("Recieving request for set flgAlone");
     flgAlone = 0;
     gsmSendSMS("OK. flgAlone=home");
     Serial.println("info: flgAlone=home");      
   }
     
   if (gsmCommand.indexOf("setmode=alone") > -1) {
-//    Serial.println("Recieving request for set flgAlone");
     flgAlone = 1;
     gsmSendSMS("info: flgAlone=alone");      
     Serial.println("info: flgAlone=alone");      
