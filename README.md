@@ -1,2 +1,2 @@
-# boiler
-A device for boiler control
+# Boiler Controller
+This device is a part of DOMOVOY home automation project
