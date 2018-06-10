@@ -1,0 +1,84 @@
+Partlist
+
+Exported from board.sch at 27.05.2018 22:22:55
+
+EAGLE Version 6.1.0 Copyright (c) 1988-2012 CadSoft
+
+Assembly variant: 
+
+Part     Value                 Device                Package             Library               Sheet
+
+C1       0.1uF                 C-EUC1206             C1206               resistor              1
+C2       0.1uF                 C-EUC1206             C1206               resistor              1
+C3       22pF                  C-EUC1206             C1206               resistor              1
+C4       22pF                  C-EUC1206             C1206               resistor              1
+C5       470uF                 CPOL-EUE3.5-8         E3,5-8              resistor              1
+C6       100uF                 CPOL-EUE1.8-4         E1,8-4              resistor              1
+C7       10uF                  CPOL-EUE1.8-4         E1,8-4              resistor              1
+C8       22uF                  CPOL-EUE1.8-4         E1,8-4              resistor              1
+C9       0.1uF                 C-EUC1206             C1206               resistor              1
+C10      330uF                 CPOL-EUE1.8-4         E1,8-4              resistor              1
+C11      100nF                 C-EUC1206             C1206               resistor              1
+C12      0.1uF                 C-EUC1206             C1206               resistor              1
+C13      0.1uF                 C-EUC1206             C1206               resistor              1
+C14      22pF                  C-EUC1206             C1206               resistor              1
+C15      22pF                  C-EUC1206             C1206               resistor              1
+C16      0.01uF                C-EUC1206             C1206               resistor              1
+C17      0.1uF                 C-EUC1206             C1206               resistor              1
+C18      10uF                  C-EUC1206             C1206               resistor              1
+C19      33pF                  C-EUC1206             C1206               resistor              1
+C20      10pF                  C-EUC1206             C1206               resistor              1
+C21      100uF                 C-PR-SMD-TE-D         TE-D-7343           cap-pan40             1
+C22      2000uF                CPOL-EUE3.5-8         E3,5-8              resistor              1
+C23      100nF                 C-EUC1206             C1206               resistor              1
+C24      22pF                  C-EUC1206             C1206               resistor              1
+C25      22pF                  C-EUC1206             C1206               resistor              1
+C26      22pF                  C-EUC1206             C1206               resistor              1
+D1                             LED1206               LED-1206            SparkFun-LED          1
+D2       1N4148                1206ZENERSOD323       SOD323-W            matt diode            1
+IC1      LM1117IMPX-3.3        LM1117IMPX-3.3        SOT223              lm1117                1
+IC2      MIC29302WU            MIC29302WU            TO263-5             MIC29302WU            1
+IC3      MEGA164P/324P/644P-AU MEGA164P/324P/644P-AU TQFP44              avr-5                 1
+J1       SIMLOCK492            SIMLOCK492            5002                amphenol-simlock      1
+J2       Boiler                CONN_03-SCREW-5MM     SCREWTERMINAL-5MM-3 SparkFun-Connectors   1
+JP1      MICRO-USB             MICRO-USB             MICRO-USB           microusb              1
+JP2      DISPLAY               PINHD-1X4             1X04                pinhead               1
+JP3      KEYPAD                PINHD-1X7             1X07                pinhead               1
+JP4      TSENSOR               PINHD-1X3             1X03                pinhead               1
+Q1       16MHz                 CRYTALHC49S           HC49/S              crystal               1
+Q2       BC848ALT1SMD          BC848ALT1SMD          SOT23               transistor-npn        1
+Q3       12MHz                 CRYTALHC49S           HC49/S              crystal               1
+Q4       BSS138                MOSFET-NCH-BSS138     SOT23-3             SparkFun-DiscreteSemi 1
+Q5       BC848ALT1SMD          BC848ALT1SMD          SOT23               transistor-npn        1
+Q6       BC848ALT1SMD          BC848ALT1SMD          SOT23               transistor-npn        1
+Q8       BSS138                MOSFET-NCH-BSS138     SOT23-3             SparkFun-DiscreteSemi 1
+Q9       BSS138                MOSFET-NCH-BSS138     SOT23-3             SparkFun-DiscreteSemi 1
+Q10      BC848ALT1SMD          BC848ALT1SMD          SOT23               transistor-npn        1
+R1       10K                   R-EU_R1206            R1206               resistor              1
+R2       4K7                   R-EU_R1206            R1206               resistor              1
+R3       4K7                   R-EU_R1206            R1206               resistor              1
+R4       10K                   R-EU_R1206            R1206               resistor              1
+R5       10K                   R-EU_R1206            R1206               resistor              1
+R6       10K                   R-EU_R1206            R1206               resistor              1
+R7       51                    R-EU_R1206            R1206               resistor              1
+R8       51                    R-EU_R1206            R1206               resistor              1
+R9       51                    R-EU_R1206            R1206               resistor              1
+R11      10K                   R-EU_R1206            R1206               resistor              1
+R12      470                   R-EU_R1206            R1206               resistor              1
+R13      100K                  R-EU_R1206            R1206               resistor              1
+R14      43K                   R-EU_R1206            R1206               resistor              1
+R16      10K                   R-EU_R1206            R1206               resistor              1
+R17      10K                   R-EU_R1206            R1206               resistor              1
+R18      10K                   R-EU_R1206            R1206               resistor              1
+R19      10K                   R-EU_R1206            R1206               resistor              1
+R20      4K7                   R-EU_R1206            R1206               resistor              1
+R21      47K                   R-EU_R1206            R1206               resistor              1
+R22      4K7                   R-EU_R1206            R1206               resistor              1
+R23      4K7                   R-EU_R1206            R1206               resistor              1
+R24      10K                   R-EU_R1206            R1206               resistor              1
+REL1     RELAYPTH              RELAYPTH              SRD-05VDC-SL-C      SRD-05VDC-SL-C        1
+S1       SIM800C               SIM800C               SIM800C             Sim800c               1
+U$1      CH340G                CH340G                SOIC16              ch340g                1
+U$3      NRF24L01+             NRF24L01+             NRF24L01+           NRF24l01+             1
+X1       GSM_Ant               ANTENNA_U.FL          U.FL                adafruit1             1
+X2       BT_Ant                ANTENNA_U.FL          U.FL                adafruit1             1
